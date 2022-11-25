@@ -15,7 +15,15 @@ export default function Home() {
 
   const { data, fetchNextPage, isLoading, isFetching, error } = useFetchMovies(query)
 
-  console.log(data)
+  // console.log(data)
+
+  const handleScroll = (e: React.UIEvent<HTMLElement>) => {
+    const { scrollTop, clientHeight, scrollHeight } = e.currentTarget
+
+    if (scrollHeight - scrollTop === clientHeight) fetchNextPage()
+  }
+
+
 
 
   return (
@@ -26,7 +34,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="relative h-screen overflow-y-scroll">
+      <main className="relative h-screen overflow-y-scroll" onScroll={handleScroll}>
         <Header setQuery={setQuery} />
 
         {!query && data && data.pages ? (
@@ -47,9 +55,8 @@ export default function Home() {
                 movie => <div key={movie.id} >
 
                   <Card
-                  imgUrl={movie.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}` : '/no_image.jpg'}
-                  title={movie.original_title}
-                  // subtitle={movie.subtitle}
+                    imgUrl={movie.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}` : '/no_image.jpg'}
+                    title={movie.original_title}
                   />
 
                 </div>
@@ -57,8 +64,7 @@ export default function Home() {
               : null}
         </Grid>
 
-
-        <Spinner />
+        {isLoading || isFetching ? <Spinner /> : null}
       </main>
 
     </>
