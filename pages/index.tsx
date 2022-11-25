@@ -7,6 +7,8 @@ import Spinner from '../components/Spinner'
 import { useState } from 'react'
 import { useFetchMovies } from '../api/fetchHook'
 
+import { BACKDROP_SIZE, IMAGE_BASE_URL } from '../config'
+
 
 export default function Home() {
   const [query, setQuery] = useState('')
@@ -26,7 +28,17 @@ export default function Home() {
 
       <main className="relative h-screen overflow-y-scroll">
         <Header setQuery={setQuery} />
-        <Hero />
+
+        {!query && data && data.pages ? (
+          <Hero
+            imgUrl={data.pages[0].results[0].backdrop_path ? IMAGE_BASE_URL + BACKDROP_SIZE + data.pages[0].results[0]?.backdrop_path : '/no_image.jpg'}
+            title={data.pages[0].results[0].title}
+            text={data.pages[0].results[0].overview}
+          />
+        ) : null}
+
+
+
         <Grid />
         <Card />
         <Spinner />
