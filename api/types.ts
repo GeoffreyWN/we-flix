@@ -20,3 +20,22 @@ export interface Movies  {
     total_pages: number,
     total_results: number,
 }
+
+export interface Credits  {
+    id: number,
+    cast: Cast[],
+    crew: Crew[],
+}
+
+export interface Cast  {
+    character: string,
+    credit_id: string,
+    name: string,
+    profile_path: string,
+}
+
+export interface Crew  {
+    job: string,
+    credit_id: string,
+    name: string,
+}
