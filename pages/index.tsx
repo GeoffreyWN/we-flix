@@ -7,7 +7,7 @@ import Spinner from '../components/Spinner'
 import { useState } from 'react'
 import { useFetchMovies } from '../api/fetchHook'
 
-import { BACKDROP_SIZE, IMAGE_BASE_URL } from '../config'
+import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from '../config'
 
 
 export default function Home() {
@@ -38,9 +38,26 @@ export default function Home() {
         ) : null}
 
 
+        <Grid
+          className="p-4 max-w-7xl m-auto"
+          title={query ? `Search Results: ${data?.pages[0].total_results}` : 'Popular Movies'}>
+          {
+            data && data.pages ? data.pages.map(
+              page => page.results.map(
+                movie => <div key={movie.id} >
 
-        <Grid />
-        <Card />
+                  <Card
+                  imgUrl={movie.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}` : '/no_image.jpg'}
+                  title={movie.original_title}
+                  // subtitle={movie.subtitle}
+                  />
+
+                </div>
+              ))
+              : null}
+        </Grid>
+
+
         <Spinner />
       </main>
 
