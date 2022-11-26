@@ -6,12 +6,12 @@ export interface Movie  {
     popularity: number,
     poster_path: string,
     title: string,
-    voter_average: number,
-    voter_count: number,
+    vote_average: number,
+    vote_count: number,
     budget: number,
     runtime: number,
     revenue: number,
-    release_date: number
+    release_date: string
 }
 
 export interface Movies  {
