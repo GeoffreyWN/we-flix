@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import SearchInput from '../SearchInput'
+import RMDBLogo from '../../public/rmdb-logo.svg'
+import RMDBLogoSmall from '../../public/rmdb-logo-small.svg'
 
 interface Props {
     setQuery?: React.Dispatch<React.SetStateAction<string>>
@@ -13,11 +15,11 @@ const Header = ({ setQuery }: Props) => (
             <Link href="/">
                 <div className="flex items-center cursor-pointer">
                     <div className="invisible md:visible" >
-                        <Image width='150' height='50' className="" src='/rmdb-logo.svg' alt="logo" />
+                        <Image priority src={RMDBLogo} alt="logo" />
                     </div>
 
                     <div className="absolute md:invisible pt-2" >
-                        <Image width='42' height='50' className="" src='/rmdb-logo-small.svg' alt="logosmall" />
+                        <Image priority src={RMDBLogoSmall} alt="logosmall" />
                     </div>
                 </div>
             </Link>

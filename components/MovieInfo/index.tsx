@@ -67,10 +67,9 @@ const MovieInfo = ({
     <Image
       priority
       placeholder='blur'
-      blurDataURL='/placeholder.jpg'
-      objectFit='cover'
-      objectPosition='center'
-      layout='fill'
+      blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPMSWKoBwADXwFPvK02gAAAAABJRU5ErkJggg=='
+      fill
+      className="object-cover"
       src={backgroundImgUrl}
       alt='thumb'
     />

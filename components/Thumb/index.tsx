@@ -8,9 +8,10 @@ interface Props {
 const Thumb = ({ imgUrl }: Props) => (
     <Image
         placeholder='blur'
-        blurDataURL='/placeholder.jpg'
+        blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPMSWKoBwADXwFPvK02gAAAAABJRU5ErkJggg=='
         className='rounded-lg object-cover '
         fill
+        sizes='(max-width:768px) 100vw, (max-width:1200px) 20vw'
         src={imgUrl}
         alt='thumb-nail'
     />

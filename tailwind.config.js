@@ -2,7 +2,8 @@
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     gridTemplateColumns: {
@@ -16,6 +17,9 @@ module.exports = {
     // fontFamily: {
     //   sans: ['var(--font-raleway)', ...fontFamily.sans]
     // }
+    minHeight: {
+      128: '40rem'
+    }
   },
   plugins: [],
 }

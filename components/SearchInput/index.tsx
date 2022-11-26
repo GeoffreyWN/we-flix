@@ -1,5 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 import React, { useRef, useState } from 'react'
+import TMDBLogo from '../../public/tmdb-logo.svg'
 
 
 interface Props {
@@ -34,7 +37,7 @@ const SearchInput = ({ setQuery }: Props) => {
         onChange={handleInput}
       />
       <div className="absolute right-4 top-8" >
-        <Image src='/tmdb-logo.svg' className="" width="30" height="32" alt="Search" />
+        <Image src={TMDBLogo}width="30" height="32" alt="Search" />
       </div>
     </>
   )
