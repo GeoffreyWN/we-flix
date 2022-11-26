@@ -36,7 +36,7 @@ const SearchInput = ({ setQuery }: Props) => {
         value={text}
         onChange={handleInput}
       />
-      <div className="absolute right-4 top-8" >
+      <div className="absolute right-4 top-9" >
         <Image src={TMDBLogo}width="30" height="32" alt="Search" />
       </div>
     </>

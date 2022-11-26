@@ -12,7 +12,7 @@ interface Props {
 const Header = ({ setQuery }: Props) => (
     <div className="sticky flex top-0 z-40 w-full h-24 bg-zinc-900" >
         <div className="flex justify-between w-full h-full max-w-7xl px-4 m-auto" >
-            <Link href="/">
+            <Link className="flex" href="/">
                 <div className="flex items-center cursor-pointer">
                     <div className="invisible md:visible" >
                         <Image priority src={RMDBLogo} alt="logo" />
@@ -24,11 +24,11 @@ const Header = ({ setQuery }: Props) => (
                 </div>
             </Link>
 
-            { setQuery && (
-                    <div className="relative flex items-center" >
-                        <SearchInput setQuery={setQuery} />
-                    </div>
-                )}
+            {setQuery && (
+                <div className="relative flex items-center" >
+                    <SearchInput setQuery={setQuery} />
+                </div>
+            )}
 
         </div>
     </div>

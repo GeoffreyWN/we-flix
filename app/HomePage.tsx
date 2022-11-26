@@ -1,3 +1,5 @@
+'use client'
+
 import Head from 'next/head'
 import { useState } from 'react'
 import { useFetchMovies } from '../api/fetchHook'
