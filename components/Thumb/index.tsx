@@ -9,9 +9,8 @@ const Thumb = ({ imgUrl }: Props) => (
     <Image
         placeholder='blur'
         blurDataURL='/placeholder.jpg'
-        className='rounded-lg'
-        layout='fill'
-        objectFit='cover'
+        className='rounded-lg object-cover '
+        fill
         src={imgUrl}
         alt='thumb-nail'
     />
